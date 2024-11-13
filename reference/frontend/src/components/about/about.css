@@ -1,0 +1,14 @@
+#about h3 {
+    text-align: center;
+    font-size: 25px;
+}
+
+.toggler {
+    position: absolute;
+    background-color: #333;
+    cursor: pointer;
+    left: 0;
+    font-size: medium;
+    color: #fff;
+    margin-top: 0;
+}
