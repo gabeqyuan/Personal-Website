@@ -3,6 +3,7 @@ import Profile from './components/profile/profile'
 import About from './components/about/about'
 import Projects from './components/projects/projects'
 import Experiences from './components/experiences/experiences'
+import Chat from './components/chat/chat'
 import './App.css'
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <>
       <Navbar/>
       <Profile/>
+      <Chat/>
       <About/>
       <div id="projects">
         <h2>Projects</h2>
