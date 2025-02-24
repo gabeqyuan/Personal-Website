@@ -8,7 +8,7 @@ function Chat() {
     async function getResponse() {
         try {
             if (!userInput) return
-            const response = await fetch('http://localhost:4000/chat', {
+            const response = await fetch('https://gabeyuan-690cc132abfa.herokuapp.com/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -29,7 +29,7 @@ function Chat() {
     function deleteChatbox(index){
         let newMessagess = [...messages]
         newMessagess.splice(index,2)
-        fetch('http://localhost:4000/delete', {
+        fetch('https://gabeyuan-690cc132abfa.herokuapp.com/delete', {
             method: 'POST', 
             headers:{
                 'Content-Type': 'application/json'
