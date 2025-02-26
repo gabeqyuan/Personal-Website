@@ -8,7 +8,7 @@ function Chat() {
     async function getResponse() {
         try {
             if (!userInput) return
-            const response = await fetch('https://gabeyuan-690cc132abfa.herokuapp.com/', {
+            const response = await fetch('https://gabeyuan-690cc132abfa.herokuapp.com/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
