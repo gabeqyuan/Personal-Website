@@ -40,18 +40,32 @@ app.get("/", (req, res) => {
 });
 
 app.post('/chat', async (req, res) => {
-    const userInput = req.body.userInput
-    let responseMessage
+    const userInput = req.body.userInput;
+    let responseMessage;
+
     try {
-        const result = await model.generateContent(userInput)
-        responseMessage = result.response.text()
-    } catch(e) {
-        responseMessage = 'Oops, something went wrong!'
+        const result = await model.generateContent(userInput);
+        responseMessage = result.response.text();
+
+        // Connect to MongoDB
+        const db = client.db('personal-website'); // Change to your database name
+        const collection = db.collection('logs'); // Change to your collection name
+
+        // Insert the chat log into MongoDB
+        await collection.insertOne({
+            input: userInput,
+            response: responseMessage,
+            timestamp: new Date()
+        });
+
+    } catch (e) {
+        console.error('Error processing chat:', e);
+        responseMessage = 'Oops, something went wrong!';
     }
-    res.json({
-        message: responseMessage,
-    })
-})
+
+    res.json({ message: responseMessage });
+});
+
 
 app.post('/delete', async (req, res) => {
     try {
