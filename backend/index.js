@@ -20,9 +20,14 @@ const model = genAI.getGenerativeModel({
     He is also a Business Administration and Management minor. He is currently a member of BU Hack4Impact, and he is also VP for BU Christians on Campus Club. 
     He has experience in programming languages such as Python and Java. 
     He has taken courses at BU such as CS111 (Intro to Computer Science in Python) and CS131 (Combinatoric Structures). 
-    Gabe's email is gabeyuan@bu.edu. Do not use markdown, emojis, or any syntax other than plain text in your responses.
-    `,
+    Gabe's email is gabeyuan@bu.edu. Do not use markdown, emojis, or any syntax other than plain text in your responses.`
+    ,
 })
+
+// ✅ Add a route to prevent "Cannot GET /"
+app.get("/", (req, res) => {
+    res.send("Server is running successfully!");
+});
 
 app.post('/chat', async (req, res) => {
     const userInput = req.body.userInput
@@ -38,10 +43,6 @@ app.post('/chat', async (req, res) => {
     })
 })
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`)
-})
-
 app.post('/delete', async (req, res) => {
     try {
         const log = req.body 
@@ -55,5 +56,8 @@ app.post('/delete', async (req, res) => {
         console.error(error)
         res.status(500).json({message: 'Error'})
     }
-    })
+})
 
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`)
+})
