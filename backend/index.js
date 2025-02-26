@@ -3,6 +3,16 @@ import cors from 'cors'
 import bodyParser from 'body-parser'
 import dotenv from 'dotenv'
 import { GoogleGenerativeAI } from '@google/generative-ai'
+import mongoose from 'mongoose';
+
+const mongoURI = process.env.MONGO_URL || 'mongodb+srv://gabeyuan7:Gqy6973435@personal-portfolio-webs.51ux4.mongodb.net/?retryWrites=true&w=majority&appName=Personal-Portfolio-Website';
+
+mongoose.connect(mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+.then(() => console.log('MongoDB connected successfully'))
+.catch(err => console.error('MongoDB connection error:', err));
 
 dotenv.config()
 
