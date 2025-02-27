@@ -17,7 +17,12 @@ mongoose.connect(mongoURI, {
 dotenv.config()
 
 const app = express()
-app.use(cors())
+app.use(cors({
+    origin: "https://gabeyuan.netlify.app", // Allow only Netlify frontend
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true
+}));
+
 app.use(bodyParser.json())
 
 const PORT = process.env.PORT || 4000
@@ -48,8 +53,8 @@ app.post('/chat', async (req, res) => {
         responseMessage = result.response.text();
 
         // Connect to MongoDB
-        const db = client.db('personal-website'); // Change to your database name
-        const collection = db.collection('logs'); // Change to your collection name
+        const collection = mongoose.connection.db.collection('logs');
+
 
         // Insert the chat log into MongoDB
         await collection.insertOne({
@@ -74,7 +79,7 @@ app.post('/delete', async (req, res) => {
         res.status(400).json({message: 'Bad Request'})
         return
         }
-        await mongoclient.db('personal-website').collection('logs').deleteOne(log)
+        await mongoose.connection.db.collection('logs').deleteOne(log);
         res.status(201).json({message:'Success'})
     } catch (error) {
         console.error(error)
