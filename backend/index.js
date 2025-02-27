@@ -39,12 +39,26 @@ const model = genAI.getGenerativeModel({
     ,
 })
 
+
+app.options('*', (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://gabeyuan.netlify.app");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    res.sendStatus(200);
+});
+
+
+
 // ✅ Add a route to prevent "Cannot GET /"
 app.get("/", (req, res) => {
     res.send("Server is running successfully!");
 });
 
 app.post('/chat', async (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://gabeyuan.netlify.app");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    
     const userInput = req.body.userInput;
     let responseMessage;
 
@@ -54,7 +68,6 @@ app.post('/chat', async (req, res) => {
 
         // Connect to MongoDB
         const collection = mongoose.connection.db.collection('logs');
-
 
         // Insert the chat log into MongoDB
         await collection.insertOne({
@@ -72,20 +85,26 @@ app.post('/chat', async (req, res) => {
 });
 
 
+
 app.post('/delete', async (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://gabeyuan.netlify.app");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
     try {
-        const log = req.body 
-        if (!log.input || !log.response || Object.keys(log).length !== 2){
-        res.status(400).json({message: 'Bad Request'})
-        return
+        const log = req.body;
+        if (!log.input || !log.response || Object.keys(log).length !== 2) {
+            res.status(400).json({ message: 'Bad Request' });
+            return;
         }
         await mongoose.connection.db.collection('logs').deleteOne(log);
-        res.status(201).json({message:'Success'})
+        res.status(201).json({ message: 'Success' });
     } catch (error) {
-        console.error(error)
-        res.status(500).json({message: 'Error'})
+        console.error(error);
+        res.status(500).json({ message: 'Error' });
     }
-})
+});
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
