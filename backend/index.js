@@ -18,7 +18,7 @@ dotenv.config()
 
 const app = express()
 app.use(cors({
-    origin: "https://gabeyuan.netlify.app", // Allow only Netlify frontend
+    origin: "*", 
     methods: "GET,POST,PUT,DELETE",
     credentials: true
 }));
