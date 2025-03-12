@@ -8,7 +8,7 @@ function Projects({ name, description, github }) {
             <a target="_blank" href={github}><button className="github">
                 <img className="github-inline" width="20"
                     src="https://cdn-icons-png.flaticon.com/512/25/25231.png" />
-                GitHub
+                See Code
             </button></a>
         </div>
     )
