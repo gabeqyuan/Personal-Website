@@ -28,7 +28,9 @@ body {
 }
 #projects h3,
 #exp p,
-#exp li {
+#exp li,
+#exp h4, 
+#exp h3 {
     line-height: 1.8; 
 }
 
