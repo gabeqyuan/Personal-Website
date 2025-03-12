@@ -3,7 +3,7 @@ import './projects.css'
 function Projects({ name, description, github }) {
     return (
         <div className="project">
-            <h4>{name}</h4>
+            <h3>{name}</h3>
             <p>{description}</p>
             <a target="_blank" href={github}><button className="github">
                 <img className="github-inline" width="20"
