@@ -15,7 +15,7 @@ function App() {
       <About/>
       <div id="projects">
         <h2>Projects</h2>
-        <Projects name="Personalized AI Chatbot " description="<b>Integrated AI Chatbot<b> into Personal Portfolio Website using <b>Google Gemini API<b> and <b>MongoDB<b>" See Code="https://github.com/gabeqyuan/Personal-Website"/>
+        <Projects name="Personalized AI Chatbot " description="<b>Integrated AI Chatbot</b> into Personal Portfolio Website using <b>Google Gemini API</b> and <b>MongoDB</b>" See Code="https://github.com/gabeqyuan/Personal-Website"/>
 
       </div>
       <div id="exp">
