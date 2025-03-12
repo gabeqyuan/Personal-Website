@@ -26,6 +26,13 @@ body {
     margin-bottom: 25px;
     position: relative;
 }
+#projects p,
+#exp p,
+#projects li,
+#exp li {
+    line-height: 1.8; 
+}
+
 
 .project,
 .job {
