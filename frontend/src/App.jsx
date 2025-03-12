@@ -15,15 +15,15 @@ function App() {
       <About/>
       <div id="projects">
         <h2>Projects</h2>
-        <Projects name="Personalized AI Chatbot " description="Integrated AI Chatbot into Personal Portfolio Website using Google Gemini API and MongoDB" github="https://github.com/gabeqyuan/Personal-Website"/>
+        <Projects name="Personalized AI Chatbot " description="<b>Integrated AI Chatbot<b> into Personal Portfolio Website using <b>Google Gemini API<b> and <b>MongoDB<b>" See Code="https://github.com/gabeqyuan/Personal-Website"/>
 
       </div>
       <div id="exp">
         <h2>Experiences</h2>
         <Experiences title="Summer Intern" info="American Express Global Business Travel" dates="June 2022 – August 2023" bullets={[
-          'Enabled an efficient and improved candidate experience by remodeling the company’s careers website', 
-          'Spearheaded a cross-functional initiative to analyze and revamp key aspects impacting employee experience and brand image, culminating in a strategic proposal presented to and adopted by the HR Leadership Team including the CEO & CPO',
-          'Ensured proper and fair compensation distribution after acquisition by restructuring company job architecture'
+          'Improved candidate experience by remodeling the company’s careers website', 
+          'Spearheaded a cross-functional initiative to revamp key aspects impacting employee experience and brand image, culminating in a proposal presented to and adopted by the HR Leadership Team including the CEO & CPO',
+          'Ensured fair compensation distribution after acquisition by restructuring company job architecture'
           ]}/>
       </div>
     </>
