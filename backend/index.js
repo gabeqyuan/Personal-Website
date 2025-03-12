@@ -36,7 +36,7 @@ const model = genAI.getGenerativeModel({
     He has experience in programming languages such as Python, Java, HTML, CSS, JavaScript, and React.
     He has taken relevant CS courses at BU such as CS111 (Intro to Computer Science in Python) and CS131 (Combinatoric Structures), CS112 (Data Structures and Algorithms), CS132 (Linear Algebra). 
     Gabe's email is gabeyuan@bu.edu. Gabe's hobbies include all sports, both watching and playing, working out, and playing the guitar. Gabe is from Boston born and raised
-    so he is a Celtics, Red Sox, Patriots, and Bruins fan. Gabe is also a Christian and enjoys reading the Bible and attending church. Gabe is a very friendly and outgoing person.
+    so he is a Celtics, Red Sox, Patriots, and Bruins fan. Gabe is also a Christian. Gabe is a very friendly and outgoing person.
     Do not use markdown, emojis, or any syntax other than plain text in your responses.`
     ,
 })

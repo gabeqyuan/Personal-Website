@@ -15,13 +15,16 @@ function App() {
       <About/>
       <div id="projects">
         <h2>Projects</h2>
-        <Projects name="Project 1" description="Project 1 Description" github="https://github.com"/>
-        <Projects name="Project 2" description="Project 2 Description" github="https://github.com"/>
+        <Projects name="Personalized AI Chatbot " description="Integrated AI Chatbot into Personal Portfolio Website using Google Gemini API and MongoDB" github="https://github.com/gabeqyuan/Personal-Website"/>
+
       </div>
       <div id="exp">
         <h2>Experiences</h2>
-        <Experiences title="Experience 1" info="Experience 1 Description" dates="Date 1 – Date 2" bullets={['Bullet 1', 'Bullet 2']}/>
-        <Experiences title="Experience 2" info="Experience 2 Description" dates="Date 1 – Date 2" bullets={['Bullet 1', 'Bullet 2', 'Bullet 3']}/>
+        <Experiences title="Summer Intern" info="American Express Global Business Travel" dates="June 2022 – August 2023" bullets={[
+          'Enabled an efficient and improved candidate experience by remodeling the company’s careers website', 
+          'Spearheaded a cross-functional initiative to analyze and revamp key aspects impacting employee experience and brand image, culminating in a strategic proposal presented to and adopted by the HR Leadership Team including the CEO & CPO',
+          'Ensured proper and fair compensation distribution after acquisition by restructuring company job architecture'
+          ]}/>
       </div>
     </>
   )
