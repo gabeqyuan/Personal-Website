@@ -16,6 +16,22 @@ function App() {
       <div id="projects">
         <h2>Projects</h2>
         <Projects 
+        name="Patriots Win Predictor" 
+        description={
+        <>
+        Built an <b>ML-powered game outcome predictor</b> using historical NFL data.  
+        Designed full-stack system with <b>Flask</b> backend, <b>PyTorch</b> model, and <b>React + Tailwind</b> frontend.  
+        Visualized 2025 Patriots schedule with <b>dynamic win probability predictions</b>.
+        </>
+        } 
+  github="https://github.com/gabeqyuan/patriots-win-predictor"
+/>
+
+
+      </div>
+      <div id="projects">
+        <h2>Projects</h2>
+        <Projects 
         name="Personalized AI Chatbot" 
         description={
           <>
@@ -28,12 +44,22 @@ function App() {
       </div>
       <div id="exp">
         <h2>Experiences</h2>
-        <Experiences title="Summer Intern" info="American Express Global Business Travel" dates="June 2022 – August 2023" bullets={[
+        <Experiences title="Software Engineering Intern" info="Harvard Medical School and Massachusetts General Hospital" dates="June 2022 – August 2023" bullets={[
+          'Reduced computation time for brain cancer imaging data by 100× (22 minutes → 13 seconds) by migrating MATLAB maximum likelihood algorithms to PyTorch with GPU acceleration and vectorized matrix operations', 
+          'Enabled efficient processing of 15M+ imaging events by implementing scalable, optimized matrix operations',
+          'Supported faster examination across 625+ imaging files by building a configurable reconstruction pipeline'
+          ]}/>
+      </div>
+      <div id="exp">
+        <h2>Experiences</h2>
+        <Experiences title="Summer Anaylst Intern" info="American Express Global Business Travel" dates="June 2022 – August 2023" bullets={[
           'Improved candidate experience by remodeling the company’s careers website', 
           'Spearheaded a cross-functional initiative to revamp key aspects impacting employee experience and brand image, culminating in a proposal presented to and adopted by the HR Leadership Team including the CEO & CPO',
           'Ensured fair compensation distribution after acquisition by restructuring company job architecture'
           ]}/>
       </div>
+
+
     </>
   )
 }
