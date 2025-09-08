@@ -24,8 +24,8 @@ function App() {
         Visualized 2025 Patriots schedule with <b>dynamic win probability predictions</b>.
         </>
         } 
-  github="https://github.com/gabeqyuan/patriots-win-predictor"
-/>
+        github="https://github.com/gabeqyuan/patriots-win-predictor"
+      />
 
 
       </div>
@@ -49,9 +49,7 @@ function App() {
           'Enabled efficient processing of 15M+ imaging events by implementing scalable, optimized matrix operations',
           'Supported faster examination across 625+ imaging files by building a configurable reconstruction pipeline'
           ]}/>
-      </div>
-      <div id="exp">
-        <h2>Experiences</h2>
+      
         <Experiences title="Summer Anaylst Intern" info="American Express Global Business Travel" dates="June 2022 – August 2023" bullets={[
           'Improved candidate experience by remodeling the company’s careers website', 
           'Spearheaded a cross-functional initiative to revamp key aspects impacting employee experience and brand image, culminating in a proposal presented to and adopted by the HR Leadership Team including the CEO & CPO',
