@@ -26,11 +26,6 @@ function App() {
         } 
         github="https://github.com/gabeqyuan/patriots-win-predictor"
       />
-
-
-      </div>
-      <div id="projects">
-        <h2>Projects</h2>
         <Projects 
         name="Personalized AI Chatbot" 
         description={
@@ -42,6 +37,8 @@ function App() {
         />
 
       </div>
+
+      
       <div id="exp">
         <h2>Experiences</h2>
         <Experiences title="Software Engineering Intern" info="Harvard Medical School and Massachusetts General Hospital" dates="June 2022 – August 2023" bullets={[
