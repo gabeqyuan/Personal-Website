@@ -20,14 +20,14 @@ function App() {
         description={
         <>
         Developed an interactive music discovery platform that allows users to explore global listening trends by selecting
-regions on a 3D globe using <b>MapBox API</b>and previewing top tracks.
+regions on a 3D globe using <b>MapBox API</b> and previewing top tracks.
 Integrated <b>Google Gemini API</b> to power a Tinder-style recommendation engine, analyzing user swipe
 interactions to generate and save curated 15-song playlists directly to their Spotify library using the <b>Spotify API</b>.
 Implemented <b>secure user authentication</b> via <b>Spotify OAuth</b> to manage sessions and personalize data access,
 shipping the full-stack application within a 24-hour hackathon timeframe.
         </>
         } 
-        github=
+        github="https://github.com/gabeqyuan/discover-worldly"
       />
         <Projects 
         name="Patriots Win Predictor" 
@@ -61,7 +61,7 @@ shipping the full-stack application within a 24-hour hackathon timeframe.
           'Supported faster examination across 625+ imaging files by building a configurable reconstruction pipeline'
           ]}/>
       
-        <Experiences title="Summer Anaylst Intern" info="American Express Global Business Travel" dates="June 2022 – August 2023" bullets={[
+        <Experiences title="Summer Analyst Intern" info="American Express Global Business Travel" dates="June 2022 – August 2023" bullets={[
           'Improved candidate experience by remodeling the company’s careers website', 
           'Spearheaded a cross-functional initiative to revamp key aspects impacting employee experience and brand image, culminating in a proposal presented to and adopted by the HR Leadership Team including the CEO & CPO',
           'Ensured fair compensation distribution after acquisition by restructuring company job architecture'
