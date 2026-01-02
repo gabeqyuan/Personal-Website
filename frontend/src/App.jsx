@@ -27,7 +27,7 @@ Implemented <b>secure user authentication</b> via <b>Spotify OAuth</b> to manage
 shipping the full-stack application within a 24-hour hackathon timeframe.
         </>
         } 
-        github="https://github.com/gabeqyuan/discover-worldly"
+        github=
       />
         <Projects 
         name="Patriots Win Predictor" 
