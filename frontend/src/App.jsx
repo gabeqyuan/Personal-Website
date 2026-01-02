@@ -16,6 +16,20 @@ function App() {
       <div id="projects">
         <h2>Projects</h2>
         <Projects 
+        name="DiscoverWorldly" 
+        description={
+        <>
+        Developed an interactive music discovery platform that allows users to explore global listening trends by selecting
+regions on a 3D globe using <b>MapBox API</b>and previewing top tracks.
+Integrated <b>Google Gemini API</b> to power a Tinder-style recommendation engine, analyzing user swipe
+interactions to generate and save curated 15-song playlists directly to their Spotify library using the <b>Spotify API</b>.
+Implemented <b>secure user authentication</b> via <b>Spotify OAuth</b> to manage sessions and personalize data access,
+shipping the full-stack application within a 24-hour hackathon timeframe.
+        </>
+        } 
+        github="https://github.com/gabeqyuan/discover-worldly"
+      />
+        <Projects 
         name="Patriots Win Predictor" 
         description={
         <>
