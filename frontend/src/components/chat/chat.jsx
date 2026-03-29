@@ -1,14 +1,20 @@
 import { useState } from 'react'
 import './chat.css'
 
+const API_BASE = import.meta.env.VITE_API_BASE || '/.netlify/functions'
+
 function Chat() {
     const [messages, setMessages] = useState([])
     const [userInput, setUserInput] = useState('')
+    const [error, setError] = useState(null)
+    const [loading, setLoading] = useState(false)
 
     async function getResponse() {
+        if (!userInput || loading) return
+        setError(null)
+        setLoading(true)
         try {
-            if (!userInput) return
-            const response = await fetch('https://gabeyuan-690cc132abfa.herokuapp.com/chat', {
+            const response = await fetch(`${API_BASE}/chat`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -16,20 +22,23 @@ function Chat() {
                 body: JSON.stringify({ userInput })
             })
             if (!response.ok) {
-                throw new Error('Oops, something went wrong!')
+                throw new Error(`Request failed: ${response.status}`)
             }
             const { message } = await response.json()
             setMessages([...messages, userInput, message])
+            setUserInput('')
         } catch (error) {
             console.error(error)
-            return 'Oops, something went wrong!'
+            setError('Chat is temporarily unavailable. Please try again later.')
+        } finally {
+            setLoading(false)
         }
     }
 
     function deleteChatbox(index){
         let newMessagess = [...messages]
         newMessagess.splice(index,2)
-        fetch('https://gabeyuan-690cc132abfa.herokuapp.com/delete', {
+    fetch(`${API_BASE}/delete`, {
             method: 'POST', 
             headers:{
                 'Content-Type': 'application/json'
@@ -45,11 +54,20 @@ function Chat() {
         <div id="chat">
             <form onSubmit={(e) => e.preventDefault()}>
                 <h2>Ask Me A Question</h2>
-                <input type="text" name='user-input' id="questionInput" 
-                    placeholder="What would you like to ask?" 
-                    onChange={e => setUserInput(e.target.value)}/>
-                <button type="submit" onClick={getResponse}>Submit</button>
+                <input
+                    type="text"
+                    name='user-input'
+                    id="questionInput"
+                    placeholder="What would you like to ask?"
+                    value={userInput}
+                    onChange={e => setUserInput(e.target.value)}
+                    disabled={loading}
+                />
+                <button type="submit" onClick={getResponse} disabled={loading}>
+                    {loading ? 'Sending...' : 'Submit'}
+                </button>
             </form>
+            {error && <div className="chat-error">{error}</div>}
             {
                 messages.map((text, index) => (
                     <div key={index} className="chatbox">

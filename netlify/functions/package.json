@@ -1,0 +1,8 @@
+{
+  "name": "netlify-functions",
+  "type": "module",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "mongoose": "^8.11.0"
+  }
+}
