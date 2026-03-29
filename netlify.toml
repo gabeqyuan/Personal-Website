@@ -1,7 +1,9 @@
 [build]
-  command = "npm install --prefix frontend && npm run build --prefix frontend"
-  publish = "frontend/dist"
-  functions = "netlify/functions"
+  # If Netlify Base directory is set to "frontend", this runs in /frontend
+  command = "npm install && npm run build && npm install --prefix ../netlify/functions"
+  publish = "dist"
+  # Functions live one level up from /frontend
+  functions = "../netlify/functions"
 
 [[redirects]]
   from = "/*"
